@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+
+  .inp {
+    width: 400px;
+    padding: 10px 20px;
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    border-radius: 5px;
+
+    
+    &:hover {
+        border: 1px solid rgba(192, 192, 192, 0.9);
+      }
+  }
+
+  .imgInp {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
