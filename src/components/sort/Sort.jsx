@@ -1,9 +1,12 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSelectSort } from "../../redax/slices/filterSlice";
 
-const Sort = ({selectSort , setSelectSort }) => {
-
+const Sort = () => {
+    const selectSort = useSelector(state => state.filterSlice.selectSort)
+    const dispatch = useDispatch()
     const [visible, setVisible] = React.useState(false)
-  
+
     const sortItem = [
         { name: "популярности+", sort: "rating" },
         { name: "популярности-", sort: "-rating" },
@@ -12,10 +15,9 @@ const Sort = ({selectSort , setSelectSort }) => {
         { name: "алфавиту А-Я", sort: "-title" },
         { name: "алфавиту Я-А", sort: "title" }
     ]
-   
+
     const selected = (i) => {
-        setSelectSort(i)
-        console.log( selectSort)
+        dispatch(setSelectSort(i))
         setVisible(!visible)
     }
     return (
